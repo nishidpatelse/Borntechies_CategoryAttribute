@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Born Techies Pvt. Ltd. 
+ *
+ * Born Techies Pvt. Ltd. serves customers all at one place who searches
+ * for different types of extensions for Magento 2.
+ * 
+ * DISCLAIMER
+ * 
+ * 
+ * Do not edit or add to this file if you wish to upgrade this
+ * extension to newer 
+ * version in the future.
+ *
+ * 
+ * @category Born Techies Pvt. Ltd. 
+ *
+ * @package Borntechies_CategoryAttribute
+ * 
+ * @copyright Copyright (c) Born Techies Pvt. Ltd. 
+ * (https://borntechies.com/)
+ * See COPYING.txt for license details.
+ * 
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Borntechies\CategoryAttribute\Controller\Adminhtml\Category\Shopnow\Upload">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Magento\Catalog\CategoryImageUpload</argument>
+        </arguments>
+    </type>
+    <type name="Borntechies\CategoryAttribute\Controller\Adminhtml\Category\Shopnowsecond\Upload">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Magento\Catalog\CategoryImageUpload</argument>
+        </arguments>
+    </type>
+    <type name="Borntechies\CategoryAttribute\Controller\Adminhtml\Category\Thumbnailimage\Upload">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Magento\Catalog\CategoryImageUpload</argument>
+        </arguments>
+    </type>
+    <virtualType name="Magento\Catalog\CategoryImageUpload" type="Magento\Catalog\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">catalog/tmp/category</argument>
+            <argument name="basePath" xsi:type="string">catalog/category</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <preference for="Magento\Theme\Block\Html\Topmenu" type="Borntechies\CategoryAttribute\Block\Html\Topmenu" />
+</config>
